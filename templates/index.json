@@ -25,6 +25,33 @@
         "show_text_below": true
       }
     },
+    "165305418185f8fbc5": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "NEW IN",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "tee",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "165301640920778662": {
       "type": "collection-list",
       "blocks": {
@@ -113,9 +140,9 @@
         "show_description": false,
         "description_style": "body",
         "collection": "shirts",
-        "products_to_show": 8,
+        "products_to_show": 4,
         "columns_desktop": 4,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
@@ -130,12 +157,87 @@
         "padding_top": 28,
         "padding_bottom": 36
       }
+    },
+    "1653053970a20205a0": {
+      "type": "featured-product",
+      "disabled": true,
+      "blocks": {
+        "16530539709e856e6b-0": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "16530539709e856e6b-1": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "16530539709e856e6b-2": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "16530539709e856e6b-3": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "16530539709e856e6b-4": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "16530539709e856e6b-5": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "16530539709e856e6b-6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "16530539709e856e6b-7": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "16530539709e856e6b-0",
+        "16530539709e856e6b-1",
+        "16530539709e856e6b-2",
+        "16530539709e856e6b-3",
+        "16530539709e856e6b-4",
+        "16530539709e856e6b-5",
+        "16530539709e856e6b-6",
+        "16530539709e856e6b-7"
+      ],
+      "settings": {
+        "product": "",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "165302704044b71b07",
     "1653036381d417b118",
+    "165305418185f8fbc5",
     "165301640920778662",
-    "featured_collection"
+    "featured_collection",
+    "1653053970a20205a0"
   ]
 }
