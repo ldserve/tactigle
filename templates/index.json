@@ -1,1 +1,141 @@
-{"sections":{"image_banner":{"type":"image-banner","blocks":{"heading":{"type":"heading","settings":{"heading":"Image banner","heading_size":"h0"}},"text":{"type":"text","settings":{"text":"Give customers details about the banner image(s) or content on the template.","text_style":"body"}},"button":{"type":"buttons","settings":{"button_label_1":"Shop all","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading","text","button"],"settings":{"image_overlay_opacity":40,"image_height":"large","adapt_height_first_image":false,"desktop_content_position":"bottom-center","show_text_box":false,"desktop_content_alignment":"center","color_scheme":"background-1","mobile_content_alignment":"center","stack_images_on_mobile":false,"show_text_below":false}},"rich_text":{"type":"rich-text","blocks":{"heading":{"type":"heading","settings":{"heading":"Talk about your brand","heading_size":"h1"}},"text":{"type":"text","settings":{"text":"<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"}}},"block_order":["heading","text"],"settings":{"color_scheme":"background-1","full_width":true,"padding_top":40,"padding_bottom":0}},"featured_collection":{"type":"featured-collection","settings":{"title":"Featured products","heading_size":"h2","collection":"all","products_to_show":8,"columns_desktop":4,"show_view_all":false,"color_scheme":"background-1","image_ratio":"adapt","show_secondary_image":true,"show_vendor":false,"show_rating":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":28,"padding_bottom":36}},"collage":{"type":"collage","blocks":{"collection-0":{"type":"collection","settings":{"collection":""}},"product":{"type":"product","settings":{"product":"","second_image":false}},"collection-1":{"type":"collection","settings":{"collection":""}}},"block_order":["collection-0","product","collection-1"],"settings":{"heading":"Multimedia collage","heading_size":"h2","desktop_layout":"left","mobile_layout":"collage","color_scheme":"background-1","padding_top":36,"padding_bottom":36}},"video":{"type":"video","settings":{"heading":"","heading_size":"h1","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","description":"","full_width":false,"color_scheme":"background-1","padding_top":36,"padding_bottom":36}},"multicolumn":{"type":"multicolumn","blocks":{"column1":{"type":"column","settings":{"title":"Column","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","link_label":"","link":""}},"column2":{"type":"column","settings":{"title":"Column","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","link_label":"","link":""}},"column3":{"type":"column","settings":{"title":"Column","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","link_label":"","link":""}}},"block_order":["column1","column2","column3"],"settings":{"title":"","heading_size":"h1","image_width":"third","image_ratio":"adapt","columns_desktop":3,"column_alignment":"center","background_style":"none","button_label":"","button_link":"","color_scheme":"background-1","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}}},"order":["image_banner","rich_text","featured_collection","collage","video","multicolumn"]}
+{
+  "sections": {
+    "165302704044b71b07": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "accent-1",
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "1653036381d417b118": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/banner11.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "165301640920778662": {
+      "type": "collection-list",
+      "blocks": {
+        "16530164091513bb0d-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tee"
+          }
+        },
+        "16530164091513bb0d-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shirts"
+          }
+        },
+        "55bff5bc-0be4-4f0e-92eb-718cf464a895": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "pants"
+          }
+        },
+        "fa116bea-e3ee-4f73-97a5-7b673ff12b91": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "set"
+          }
+        },
+        "16530164091513bb0d-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "camo"
+          }
+        },
+        "4cb05310-dee0-48f3-bebd-28c32175bade": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": ""
+          }
+        },
+        "27f4f867-8f1d-4462-b7cb-92b8f5066309": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": ""
+          }
+        },
+        "4026c2c7-2d21-416e-a40d-758add4e11d6": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "16530164091513bb0d-1",
+        "16530164091513bb0d-2",
+        "55bff5bc-0be4-4f0e-92eb-718cf464a895",
+        "fa116bea-e3ee-4f73-97a5-7b673ff12b91",
+        "16530164091513bb0d-0",
+        "4cb05310-dee0-48f3-bebd-28c32175bade",
+        "27f4f867-8f1d-4462-b7cb-92b8f5066309",
+        "4026c2c7-2d21-416e-a40d-758add4e11d6"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 60,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "FEATURED  PRODUTS",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "165302704044b71b07",
+    "1653036381d417b118",
+    "165301640920778662",
+    "featured_collection"
+  ]
+}
