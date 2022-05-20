@@ -107,12 +107,12 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "FEATURED  PRODUTS",
-        "heading_size": "h1",
+        "title": "BEST SELLERS",
+        "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
+        "collection": "shirts",
         "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
