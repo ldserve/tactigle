@@ -12,6 +12,7 @@ slider-component.slider-component-full-width {
   slider-component.page-width {
     padding: 0 1.5rem;
   }
+  
 }
 
 @media screen and (min-width: 749px) and (max-width: 990px) {
@@ -23,6 +24,23 @@ slider-component.slider-component-full-width {
 @media screen and (max-width: 989px) {
   .no-js slider-component .slider {
     padding-bottom: 3rem;
+  }
+
+  slider-component .phone-collection-list{
+    display: flex;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .slider__slide{
+      width: 49% !important;
+      max-width: 50% !important;
+      margin: 0 !important;
+  }
+
+  .slider-buttons{
+    display: none !important;
   }
 }
 
@@ -42,7 +60,7 @@ slider-component.slider-component-full-width {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    scroll-padding-left: 1.5rem;
+    /* scroll-padding-left: 1.5rem; */
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
   }
