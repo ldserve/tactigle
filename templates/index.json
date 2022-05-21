@@ -34,7 +34,7 @@
         "show_description": false,
         "description_style": "body",
         "collection": "tee",
-        "products_to_show": 4,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
@@ -57,6 +57,7 @@
       "blocks": {
         "16530164091513bb0d-1": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "tee"
           }
@@ -140,7 +141,7 @@
         "show_description": false,
         "description_style": "body",
         "collection": "shirts",
-        "products_to_show": 4,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
