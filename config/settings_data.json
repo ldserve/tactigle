@@ -104,7 +104,7 @@
             "type": "announcement",
             "settings": {
               "text": "FREE SHIPPING ON ORDER OVER $80+",
-              "color_scheme": "background-2",
+              "color_scheme": "accent-1",
               "link": ""
             }
           }
@@ -119,7 +119,7 @@
         "type": "header",
         "settings": {
           "color_scheme": "accent-1",
-          "logo": "shopify:\/\/shop_images\/middle_img_v2_72e4f6b1-d5fc-4043-b10d-f3522e81a38g_55b5e2bb-23c1-43e5-b177-3042a5af5c97.png",
+          "logo": "shopify:\/\/shop_images\/20220521-182500.png",
           "logo_width": 250,
           "logo_position": "top-center",
           "menu": "main-menu",
