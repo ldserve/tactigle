@@ -12,7 +12,7 @@
     "1653036381d417b118": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/12_9c4322e0-1b25-4f56-8ce3-33c3832cf56c.jpg",
+        "image": "shopify:\/\/shop_images\/12_d15df9ce-d5b7-42a9-87aa-b741e2c600fd.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": false,
@@ -73,17 +73,17 @@
             "collection": "pants"
           }
         },
+        "16530164091513bb0d-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accessories"
+          }
+        },
         "fa116bea-e3ee-4f73-97a5-7b673ff12b91": {
           "type": "featured_collection",
           "disabled": true,
           "settings": {
             "collection": "set"
-          }
-        },
-        "16530164091513bb0d-0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "accessories"
           }
         },
         "4cb05310-dee0-48f3-bebd-28c32175bade": {
@@ -112,8 +112,8 @@
         "16530164091513bb0d-1",
         "16530164091513bb0d-2",
         "55bff5bc-0be4-4f0e-92eb-718cf464a895",
-        "fa116bea-e3ee-4f73-97a5-7b673ff12b91",
         "16530164091513bb0d-0",
+        "fa116bea-e3ee-4f73-97a5-7b673ff12b91",
         "4cb05310-dee0-48f3-bebd-28c32175bade",
         "27f4f867-8f1d-4462-b7cb-92b8f5066309",
         "4026c2c7-2d21-416e-a40d-758add4e11d6"
