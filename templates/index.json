@@ -12,10 +12,10 @@
     "1653036381d417b118": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/12.jpg",
+        "image": "shopify:\/\/shop_images\/12_9c4322e0-1b25-4f56-8ce3-33c3832cf56c.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
-        "adapt_height_first_image": false,
+        "adapt_height_first_image": true,
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",
