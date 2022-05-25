@@ -173,7 +173,6 @@
                   </ul>
                 </nav>
                 <div class="menu-drawer__utility-links">
-									{%- comment -%}
 										{%- if shop.customer_accounts_enabled -%}
 											<a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset h5">
 												{% render 'icon-account' %}
@@ -186,7 +185,6 @@
 												-%}
 											</a>
 										{%- endif -%}
-									{%- endcomment -%}
                   <ul class="list list-social list-unstyled" role="list">
                     {%- if settings.social_twitter_link != blank -%}
                       <li class="list-social__item">
@@ -538,7 +536,6 @@
           </div>
         </details>
       </details-modal>
-			{%- comment -%}
 				{%- if shop.customer_accounts_enabled -%}
 					<a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
 						{% render 'icon-account' %}
@@ -553,7 +550,6 @@
 						</span>
 					</a>
 				{%- endif -%}
-			{%- endcomment -%}
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
           if cart == empty
