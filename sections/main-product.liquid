@@ -234,12 +234,7 @@
                 {{ form | payment_terms }}
               {%- endform -%}
             </div>
-          {%- when 'description' -%}
-            {%- if product.description != blank -%}
-              <div class="product__description rte quick-add-hidden">
-                {{ product.description }}
-              </div>
-            {%- endif -%}
+
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
           {%- when 'collapsible_tab' -%}
@@ -248,15 +243,17 @@
                 <summary>
                   <div class="summary__title">
                     {% render 'icon-accordion', icon: block.settings.icon %}
-                    <h2 class="h4 accordion__title">
-                      {{ block.settings.heading | default: block.settings.page.title }}
-                    </h2>
+                   <h2 class="h4 accordion__title">{{ block.settings.heading | default: block.settings.page.title }} </h2>
                   </div>
                   {% render 'icon-caret' %}
                 </summary>
                 <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                  {%- if block.settings.info_mode -%}
+                   {{product.description }}
+                  {%- else -%}
                   {{ block.settings.content }}
                   {{ block.settings.page.content }}
+                  {%- endif -%}
                 </div>
               </details>
             </div>
@@ -716,11 +713,6 @@
       ]
     },
     {
-      "type": "description",
-      "name": "t:sections.main-product.blocks.description.name",
-      "limit": 1
-    },
-    {
       "type": "share",
       "name": "t:sections.main-product.blocks.share.name",
       "limit": 1,
@@ -763,7 +755,7 @@
           "default": "Collapsible row",
           "info": "t:sections.main-product.blocks.collapsible_tab.settings.heading.info",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label"
-        },
+        }, 
         {
           "type": "select",
           "id": "icon",
@@ -952,6 +944,13 @@
           "type": "richtext",
           "id": "content",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "info_mode",
+          "default": false,
+          "info": "不勾选则读取当前输入内容",
+          "label": "是否读取产品描述"
         },
         {
           "type": "page",
