@@ -5,6 +5,7 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
@@ -51,6 +52,7 @@
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Materials",
             "icon": "leather",
@@ -202,8 +204,8 @@
       "type": "product-recommendations",
       "settings": {
         "heading": "YOU MAY ALSO LIKE",
-        "heading_size": "h1",
-        "products_to_show": 10,
+        "heading_size": "h2",
+        "products_to_show": 5,
         "columns_desktop": 5,
         "color_scheme": "background-1",
         "image_ratio": "adapt",
