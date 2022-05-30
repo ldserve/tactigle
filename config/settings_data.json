@@ -103,7 +103,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "FREE SHIPPING ON ORDER OVER $79",
+              "text": "FREE SHIPPING ON ORDER OVER $69",
               "color_scheme": "accent-2",
               "link": ""
             }
