@@ -28,12 +28,12 @@
     "165305418185f8fbc5": {
       "type": "featured-collection",
       "settings": {
-        "title": "TEES",
+        "title": "BOTTOMS",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "tee",
+        "collection": "pants",
         "products_to_show": 10,
         "columns_desktop": 5,
         "full_width": false,
@@ -134,12 +134,12 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "WORK SHIRTS",
+        "title": "TEES",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "shirts",
+        "collection": "tee",
         "products_to_show": 10,
         "columns_desktop": 5,
         "full_width": false,
@@ -234,12 +234,12 @@
     "165345970595cccd8a": {
       "type": "featured-collection",
       "settings": {
-        "title": "BOTTOMS",
+        "title": "WORK SHIRTS",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "pants",
+        "collection": "shirts",
         "products_to_show": 10,
         "columns_desktop": 5,
         "full_width": false,
