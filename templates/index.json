@@ -28,12 +28,12 @@
     "165305418185f8fbc5": {
       "type": "featured-collection",
       "settings": {
-        "title": "BOTTOMS",
+        "title": "CARGO SHORTS",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "pants",
+        "collection": "cargo-shorts",
         "products_to_show": 10,
         "columns_desktop": 5,
         "full_width": false,
