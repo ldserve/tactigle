@@ -47,11 +47,11 @@
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "<p>100% Cotton<\/p>",
+            "content": "",
+            "info_mode": true,
             "page": ""
           }
         },
@@ -61,6 +61,7 @@
             "heading": "Shipping & Returns",
             "icon": "truck",
             "content": "<p>Estimated delivery time to US\/EU is 7-14 business days<\/p><p>You have a max of 30 days to make returns.<br\/>You must send back your items to an informed address by customer service.<br\/>No returns made after 30 days from the purchase date will be accepted.<\/p>",
+            "info_mode": false,
             "page": ""
           }
         },
@@ -70,6 +71,7 @@
             "heading": "Dimensions",
             "icon": "ruler",
             "content": "",
+            "info_mode": false,
             "page": ""
           }
         },
@@ -79,6 +81,7 @@
             "heading": "Care Instructions",
             "icon": "heart",
             "content": "<p>Machine wash\/Hand wash<\/p>",
+            "info_mode": false,
             "page": ""
           }
         },
