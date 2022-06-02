@@ -9,8 +9,56 @@
         "padding_bottom": 0
       }
     },
+    "16541418972d897f07": {
+      "type": "image-banner",
+      "blocks": {
+        "1654141897eeac762f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "1654141897eeac762f-1": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "1654141897eeac762f-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "1654141897eeac762f-0",
+        "1654141897eeac762f-1",
+        "1654141897eeac762f-2"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "1653036381d417b118": {
       "type": "image-banner",
+      "disabled": true,
       "blocks": {
         "aa64d879-664a-458e-9932-3dd56d0af913": {
           "type": "heading",
@@ -31,7 +79,7 @@
           "settings": {
             "button_label_1": "SHOP NOW",
             "button_link_1": "shopify:\/\/collections",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -293,6 +341,7 @@
   },
   "order": [
     "165302704044b71b07",
+    "16541418972d897f07",
     "1653036381d417b118",
     "165305418185f8fbc5",
     "165301640920778662",
