@@ -11,8 +11,40 @@
     },
     "1653036381d417b118": {
       "type": "image-banner",
+      "blocks": {
+        "aa64d879-664a-458e-9932-3dd56d0af913": {
+          "type": "heading",
+          "settings": {
+            "heading": "TACTIGLE LIFE",
+            "heading_size": "h0"
+          }
+        },
+        "10d338fd-de3a-4013-b317-473a43e07596": {
+          "type": "text",
+          "settings": {
+            "text": "Pick your favorite camouflage outifts for your tactigle life",
+            "text_style": "subtitle"
+          }
+        },
+        "3d83240f-b2d5-4690-ac79-f0e06ce1faec": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "shopify:\/\/collections",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "aa64d879-664a-458e-9932-3dd56d0af913",
+        "10d338fd-de3a-4013-b317-473a43e07596",
+        "3d83240f-b2d5-4690-ac79-f0e06ce1faec"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner2_4bf5aef2-f5a8-4b14-aad4-6b0264873b97.jpg",
+        "image": "shopify:\/\/shop_images\/20220602-114733.webp",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": false,
