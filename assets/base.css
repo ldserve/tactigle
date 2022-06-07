@@ -2873,3 +2873,8 @@ details-disclosure > details {
 .font-body-bold {
   font-weight: var(--font-body-weight-bold);
 }
+
+ #SortBy option { 
+   background: #121212;
+   color: #b7b7b7; 
+} 
