@@ -117,6 +117,34 @@
         "padding_bottom": 0
       }
     },
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>$10 SPECIAL DEAL ON EODER $89＋<\/p><p>  <strong>ORDER ：TC10 <\/strong><\/p><p>$20 SPECIAL DEAL ON EODER $149＋<\/p><p>  <strong>ORDER ：TC20<\/strong><\/p><p>$30 SPECIAL DEAL ON EODER $199＋<\/p><p>  <strong>ORDER ：TC30<\/strong><\/p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20170604123348199-1024x769.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "inverse",
+        "mobile_content_alignment": "left",
+        "padding_top": 68,
+        "padding_bottom": 0
+      }
+    },
     "multicolumn": {
       "type": "multicolumn",
       "disabled": true,
@@ -177,40 +205,12 @@
         "padding_top": 60,
         "padding_bottom": 28
       }
-    },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>$10 SPECIAL DEAL ON EODER $89＋<\/p><p>  <strong>CODE：TC10 <\/strong><\/p><p>$20 SPECIAL DEAL ON EODER $149＋<\/p><p>  <strong>CODE：TC20<\/strong><\/p><p>$30 SPECIAL DEAL ON EODER $199＋<\/p><p>  <strong>CODE：TC30<\/strong><\/p>",
-            "text_style": "subtitle"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-1"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/20170604123348199-1024x769.jpg",
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "content_layout": "no-overlap",
-        "color_scheme": "inverse",
-        "mobile_content_alignment": "left",
-        "padding_top": 68,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
     "main",
+    "image-with-text",
     "multicolumn",
-    "product-recommendations",
-    "image-with-text"
+    "product-recommendations"
   ]
 }
