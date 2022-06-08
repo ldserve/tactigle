@@ -135,11 +135,11 @@
         "image": "shopify:\/\/shop_images\/20170604123348199-1024x769.jpg",
         "height": "small",
         "desktop_image_width": "medium",
-        "layout": "text_first",
+        "layout": "image_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "center",
         "content_layout": "no-overlap",
-        "color_scheme": "inverse",
+        "color_scheme": "background-1",
         "mobile_content_alignment": "left",
         "padding_top": 68,
         "padding_bottom": 0
