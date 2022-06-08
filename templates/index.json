@@ -111,12 +111,12 @@
     "165305418185f8fbc5": {
       "type": "featured-collection",
       "settings": {
-        "title": "CARGO SHORTS",
+        "title": "RUNNING SHORTS",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "cargo-shorts",
+        "collection": "running-shorts",
         "products_to_show": 10,
         "columns_desktop": 5,
         "full_width": false,
