@@ -208,7 +208,30 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
-  {% include "omega_multi_pixel" %} </head>
+  {% include "omega_multi_pixel" %}
+		<!-- Global site tag (gtag.js) - Google Ads: 10929745733 start-->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10929745733"></script>
+		<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-10929745733');
+		</script>
+		{% if template contains 'product' or template contains 'collection' or template contains 'index' or template contains 'search' %}
+			<script>
+        gtag('event', 'page_view', {
+          'send_to': 'AW-10929745733',
+          'ecomm_pagetype': '{% if template contains 'collection' %}category{% elsif template contains 'product' %}product{% elsif template contains 'search' %}searchresults{% elsif template contains 'index' %}home{% endif %}',
+					{% if template contains 'product' %}
+          'ecomm_prodid': 'shopify_US_{{ product.id }}_{{ product.variants.first.id }}',
+          'ecomm_totalvalue': '{{ product.price_min | money_without_currency | remove: ","}}',
+					{% endif %}
+        });
+			</script>
+		{% endif %}
+		<!-- Global site tag (gtag.js) - Google Ads: 10929745733 end-->
+	</head>
 
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
