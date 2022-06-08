@@ -121,27 +121,19 @@
       "type": "image-with-text",
       "disabled": true,
       "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
+            "text": "<p>$10 SPECIAL DEAL ON EODER $89＋<\/p><p>  <strong>CODE：TC10 <\/strong><\/p><p>$20 SPECIAL DEAL ON EODER $149＋<\/p><p>  <strong>CODE：TC20<\/strong><\/p><p>$30 SPECIAL DEAL ON EODER $199＋<\/p><p>  <strong>CODE：TC30<\/strong><\/p>",
+            "text_style": "subtitle"
           }
         }
       },
       "block_order": [
-        "image-with-text-0",
         "image-with-text-1"
       ],
       "settings": {
-        "height": "small",
+        "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "top",
