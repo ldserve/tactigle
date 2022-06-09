@@ -113,34 +113,27 @@
             "type": "announcement",
             "settings": {
               "text": "FREE SHIPPING ON ORDER OVER $69",
-              "color_scheme": "inverse",
               "link": ""
             }
           },
           "2b975004-17fb-445c-a576-389103114c62": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "$10 SPECIAL DEAL ON ORDER ¥89+     ✨CODE：TC10",
-              "color_scheme": "accent-1",
               "link": ""
             }
           },
           "733087e8-b610-4c95-acc3-e72312899897": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "$20 SPECIAL DEAL ON ORDER ¥149+     ✨CODE：TC20",
-              "color_scheme": "accent-1",
               "link": ""
             }
           },
           "4134e0cc-84b7-426c-9b87-8b52715c313e": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "$30 SPECIAL DEAL ON ORDER ¥199+     ✨CODE：TC30",
-              "color_scheme": "accent-1",
               "link": ""
             }
           }
@@ -152,6 +145,10 @@
           "4134e0cc-84b7-426c-9b87-8b52715c313e"
         ],
         "settings": {
+          "show": true,
+          "color_text": "#251a0f",
+          "color_bg": "#ffffff",
+          "time": 10
         }
       },
       "header": {
