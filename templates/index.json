@@ -46,6 +46,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/20220602-114733.webp",
         "image_overlay_opacity": 0,
+        "image_link_1": "shopify:\/\/collections\/best-seller",
         "image_height": "medium",
         "adapt_height_first_image": false,
         "desktop_content_position": "middle-center",
@@ -97,6 +98,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/f1e570c33f16d087ba5f850477ec1bdd_e43f5064-e548-4d49-b0a3-3f66b9c83b50.jpg",
         "image_overlay_opacity": 0,
+        "image_link_1": "",
         "image_height": "large",
         "adapt_height_first_image": true,
         "desktop_content_position": "middle-center",
