@@ -118,7 +118,6 @@
           },
           "2b975004-17fb-445c-a576-389103114c62": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "$10 SPECIAL DEAL ON ORDER ¥89+     ✨CODE：TC10",
               "link": ""
@@ -126,7 +125,6 @@
           },
           "733087e8-b610-4c95-acc3-e72312899897": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "$20 SPECIAL DEAL ON ORDER ¥149+     ✨CODE：TC20",
               "link": ""
@@ -134,7 +132,6 @@
           },
           "4134e0cc-84b7-426c-9b87-8b52715c313e": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "$30 SPECIAL DEAL ON ORDER ¥199+     ✨CODE：TC30",
               "link": ""
@@ -148,9 +145,9 @@
           "4134e0cc-84b7-426c-9b87-8b52715c313e"
         ],
         "settings": {
-          "show": false,
+          "show": true,
           "color_text": "#251a0f",
-          "color_bg": "#ED6123",
+          "color_bg": "#ffffff",
           "time": 10
         }
       },
