@@ -231,6 +231,16 @@
 			</script>
 		{% endif %}
 		<!-- Global site tag (gtag.js) - Google Ads: 10929745733 end-->
+    
+    {% if first_time_accessed %}
+	<!-- Event snippet for RL-Cart conversion page -->
+	<script>
+		gtag('event', 'conversion', {
+			'send_to': 'AW-10929745733/TYciCJ2p-8MDEMXe2tso',
+			'transaction_id': ''
+		});
+	</script>
+{% endif %}
 	</head>
 
   <body class="gradient">
