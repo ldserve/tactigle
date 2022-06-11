@@ -19,10 +19,11 @@
   }
 {%- endstyle -%}
 <!-- Event snippet for 添加到购物车 conversion page -->
+{% if first_time_accessed %}
 <script>
   gtag('event', 'conversion', {'send_to': 'AW-10929745733/TYciCJ2p-8MDEMXe2tso'});
 </script>
-
+{% endif %}
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
