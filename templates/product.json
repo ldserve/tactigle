@@ -123,7 +123,7 @@
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>$10 SPECIAL DEAL ON EODER $89＋<\/p><p>  <strong>ORDER ：TC10 <\/strong><\/p><p>$20 SPECIAL DEAL ON EODER $149＋<\/p><p>  <strong>ORDER ：TC20<\/strong><\/p><p>$30 SPECIAL DEAL ON EODER $199＋<\/p><p>  <strong>ORDER ：TC30<\/strong><\/p>",
+            "text": "<p>$10 SPECIAL DEAL ON ORDER $89＋<\/p><p><strong>CODE ：TC10 <\/strong><\/p><p>$20 SPECIAL DEAL ON ORDER $149＋<\/p><p><strong>CODE  ：TC20<\/strong><\/p><p>$30 SPECIAL DEAL ON ORDER $199＋<\/p><p><strong>CODE ：TC30<\/strong><\/p>",
             "text_style": "subtitle"
           }
         }
