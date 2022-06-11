@@ -10,7 +10,7 @@ class DetailsDisclosure extends HTMLElement {
     }
     if(this.mainDetailsToggle.dataset.mode==="hover"){
       this.mainDetailsToggle.addEventListener('mouseenter', this.onHover.bind(this));
-      this.mainDetailsToggle.addEventListener('mouseleave', this.close.bind(this))
+      this.mainDetailsToggle.addEventListener('mouseleave', this.onleave.bind(this))
       this.mainDetailsToggle.querySelector('summary').addEventListener('click',(e)=>e.preventDefault())
     }
 
@@ -37,6 +37,11 @@ class DetailsDisclosure extends HTMLElement {
     this.mainDetailsToggle.querySelector('summary').setAttribute('aria-expanded',true)
     this.onToggle()
 
+  }
+  onleave(){
+    setTimeout(() => {
+    this.close();
+    })
   }
 
   close() {
