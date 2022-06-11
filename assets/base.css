@@ -2178,7 +2178,7 @@ input[type='checkbox'] {
 
 /* section-header */
 #shopify-section-header {
-  z-index: 3;
+  z-index: 99;
 }
 
 .shopify-section-header-sticky {
@@ -2540,7 +2540,7 @@ details[open] > .header__icon--menu .icon-hamburger {
 details[open] > .header__submenu {
   animation: animateMenuOpen var(--duration-default) ease;
   animation-fill-mode: forwards;
-  z-index: 1;
+  z-index: 9;
 }
 
 @media (prefers-reduced-motion) {
