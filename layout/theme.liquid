@@ -219,17 +219,17 @@
       gtag('config', 'AW-10929745733');
 		</script>
 		{% if template contains 'product' or template contains 'collection' or template contains 'index' or template contains 'search' %}
-			<script>
-        gtag('event', 'conversion', {
-          'send_to': 'AW-10929745733/jJwcCOr1-sMDEMXe2tso',
-          'ecomm_pagetype': '{% if template contains 'collection' %}category{% elsif template contains 'product' %}product{% elsif template contains 'search' %}searchresults{% elsif template contains 'index' %}home{% endif %}',
-					{% if template contains 'product' %}
-          'ecomm_prodid': 'shopify_US_{{ product.id }}_{{ product.variants.first.id }}',
-          'ecomm_totalvalue': '{{ product.price_min | money_without_currency | remove: ","}}',
-					{% endif %}
-        });
-			</script>
-		{% endif %}
+<script>
+  gtag('event', 'page_view', {
+    'send_to': 'AW-10929745733',
+    'ecomm_pagetype': '{% if template contains 'collection' %}category{% elsif template contains 'product' %}product{% elsif template contains 'search' %}searchresults{% elsif template contains 'index' %}home{% endif %}',
+    {% if template contains 'product' %}
+    'ecomm_prodid': 'shopify_US_{{ product.id }}_{{ product.variants.first.id }}',
+    'ecomm_totalvalue': '{{ product.price_min | money_without_currency | remove: ","}}',
+    {% endif %}
+  });
+</script>
+{% endif %}
 		<!-- Global site tag (gtag.js) - Google Ads: 10929745733 end-->
     
     {% if first_time_accessed %}
@@ -240,6 +240,17 @@
 			'transaction_id': ''
 		});
 	</script>
+{% endif %}
+    {% if first_time_accessed %}
+  <!-- Event snippet for Test conversion page -->
+  <script>
+     gtag('event', 'conversion', {
+      'send_to': 'AW-10929745733/jJwcCOr1-sMDEMXe2tso',
+      'value': {{ checkout.subtotal_price | divided_by: 100.0 }},
+      'currency': '{{ currency }}',
+      'transaction_id': '{{ order_number }}',
+    });
+  </script>
 {% endif %}
 	</head>
 
