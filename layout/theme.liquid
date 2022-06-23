@@ -8,8 +8,7 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 		<!-- Global  GMC验证-->
-		<meta name="google-site-verification" content="_ZNY3D2ae30ljJYgloejfpgarAZMofJi9xqIuPuDEoM" />
-
+    <meta name="google-site-verification" content="k_xBbBMm0ZYYRtNR_7Ss02miTQa5nZVefksECX7RHjQ" />
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -254,7 +253,9 @@
     });
   </script>
 {% endif %}
-	</head>
+	
+{% render 'gsf-conversion-pixels' %}
+</head>
 
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">

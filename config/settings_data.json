@@ -119,21 +119,21 @@
           "2b975004-17fb-445c-a576-389103114c62": {
             "type": "announcement",
             "settings": {
-              "text": "$10 SPECIAL DEAL ON ORDER ¥89+     ✨CODE：TC10",
+              "text": "$10 SPECIAL DEAL ON ORDER $89+     ✨CODE：TC10",
               "link": ""
             }
           },
           "733087e8-b610-4c95-acc3-e72312899897": {
             "type": "announcement",
             "settings": {
-              "text": "$20 SPECIAL DEAL ON ORDER ¥149+     ✨CODE：TC20",
+              "text": "$20 SPECIAL DEAL ON ORDER $149+     ✨CODE：TC20",
               "link": ""
             }
           },
           "4134e0cc-84b7-426c-9b87-8b52715c313e": {
             "type": "announcement",
             "settings": {
-              "text": "$30 SPECIAL DEAL ON ORDER ¥199+     ✨CODE：TC30",
+              "text": "$30 SPECIAL DEAL ON ORDER $199+     ✨CODE：TC30",
               "link": ""
             }
           }
@@ -160,6 +160,7 @@
           "logo_position": "top-center",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",
+          "menu_opening_mode": "hover",
           "show_line_separator": true,
           "enable_sticky_header": true,
           "margin_bottom": 0
