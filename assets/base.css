@@ -2885,3 +2885,14 @@ details-disclosure > details {
    background: #121212;
    color: #b7b7b7; 
 } 
+
+
+/* Size Guid start*/
+.size__title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Size Guid end */

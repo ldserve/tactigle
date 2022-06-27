@@ -329,8 +329,21 @@
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
+                  {%- assign option_type =option.name | downcase -%}
                       <fieldset class="js product-form__input">
-                        <legend class="form__label">{{ option.name }}</legend>
+                        <legend class="form__label {% if  option_type =="size" %}size__title{% endif %}">
+                          {{ option.name }}
+                          {% if option_type =="size" %}
+                          <modal-opener data-modal="#SizeGuid-{{ product.id }}">
+                            <button
+                            type="button"
+                              class="size-chart__btn button--full-width button--secondary"
+                            >
+                              Size Chart
+                            </button>
+                          </modal-opener>
+                          {% endif %}
+                        </legend>
                         {%- for value in option.values -%}
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                 name="{{ option.name }}"
@@ -342,11 +355,526 @@
                             {{ value }}
                           </label>
                         {%- endfor -%}
+
                       </fieldset>
                   {%- endfor -%}
                   <script type="application/json">
                     {{ product.variants | json }}
                   </script>
+                  {%- comment -%} 尺码表弹窗 {%- endcomment -%}
+                <open-model id="SizeGuid-{{ product.id }}">
+                  <div id="sizeGuideModal" class="modal size-guide-fixed" aria-hidden="true">
+                    <div class="modal__dialog modal__dialog--stretch" role="dialog">
+                      <button class="modal__close link" data-action="close-modal"
+                        title="{{ 'general.accessibility.close' | t | escape }}">
+                        {%- render 'icon', icon: 'close' -%}
+                      </button>
+                      <div class="modal__inner">
+                        <div class="modal__inner__top">
+                          <div class="heading modal__inner__top__title"> {{ product.title }}</div>
+                          <div class="heading modal__inner__top__title">Size Chart</div>
+                        </div>
+                        <div class="card__section">
+                          <div class="sizeGuideModal__checkbox">
+                            <span>INCHES</span>
+                            <span class="sizeGuideModal__checkbox__core"></span>
+                            <span>CM</span>
+                          </div>
+                          <div class="sizeGuideModal__container">
+                            <table>
+                              <tbody></tbody>
+                            </table>
+                            {%- comment -%}尺码{%- endcomment -%}
+                            {% if product.metafields.my_fields.fatthintype == 'fat' %}
+                            <script type="application/json" data-type="chart">
+                                                {
+                                                  "SIZE": "S/M/L/XL/XXL/XXXL/XXXXL",
+                                                  "US SIZE": "37-39/40-42/43-45/46-48/49-51/52-54/55-57",
+                                                  "CHEST": "36.5-39.5/39.5-43.5/43.5-45.5/45.5-48.5/49.5-51.5/51.5-53.5/54.5-57.5",
+                                                  "SLEEVE": "32.5-33.5/33.5-34.5/34-35/34.5-35.5/35.5-36.5/36.5-37.5/37-38",
+                                                  "WASIT": "29.5-31.5/32.5-33.5/33.5-35.5/35.5-37.5/37.5-39.5/39.5-41.5/41.5-43.5",
+                                                  "HIPS": "37.5-39/39.5-41/41.5-43/43.5-45/45.5-47/47.5-49/49.5-51",
+                                                  "INSDE LEG": "32-33/32-33/32-33/33-33.5/33-33.5/33-33.5/33-33.5"
+                                                }
+                                              </script>
+                            {% else %}
+                            <script type="application/json" data-type="chart">
+                                                {
+                                                  "SIZE": "S/M/L/XL/XXL/XXXL/XXXXL",
+                                                  "US SIZE": "37-39/39-41/42-44/44-46/46-48/48-50/50-52",
+                                                  "BUST": "37.5-39.5/39.5-41.5/41.5-44.5/43.5-46.5/45.5-48.5/47.5-50.5/49.5-52.5",
+                                                  "SLEEVE": "32.5-33.5/33.5-34.5/34-35/34.5-35.5/35.5-36.5/36.5-37.5/37-38",
+                                                  "WASIT": "29.5-31.5/32.5-33.5/33.5-35.5/35.5-37.5/37.5-39.5/39.5-41.5/41.5-43.5",
+                                                  "HIPS": "37.5-39/39.5-41/41.5-43/43.5-45/45.5-47/47.5-49/49.5-51",
+                                                  "INSIDE LEG": "32-33/32-33/32-33/33-33.5/33-33.5/33-33.5/33-33.5"
+                                                }
+                                              </script>
+                            {% endif %}
+                            <div class="sizeGuideModal__tips">
+                              <div class="sizeGuideModal__tips__left">
+                                <h4 class="sizeGuideModal__tips__title heading">HOW TO MEASURE</h4>
+                                <div class="sizeGuideModal__tips__item">
+                                  <span class="sizeGuideModal__tips__item__num">1</span>
+                                  <div class="sizeGuideModal__tips__item__text">
+                                    <p class="heading">BUST</p>
+                                    <p>Measure your chest over the fullest part.</p>
+                                  </div>
+                                </div>
+                                <div class="sizeGuideModal__tips__item">
+                                  <span class="sizeGuideModal__tips__item__num">2</span>
+                                  <div class="sizeGuideModal__tips__item__text">
+                                    <p class="heading">WAIST</p>
+                                    <p>measure your waist at the narrowest point.</p>
+                                  </div>
+                                </div>
+                                <div class="sizeGuideModal__tips__item">
+                                  <span class="sizeGuideModal__tips__item__num">3</span>
+                                  <div class="sizeGuideModal__tips__item__text">
+                                    <p class="heading">SLEEVE</p>
+                                    <p>Measure from your shoulder point to your wrist.</p>
+                                  </div>
+                                </div>
+                                <div class="sizeGuideModal__tips__item">
+                                  <span class="sizeGuideModal__tips__item__num">4</span>
+                                  <div class="sizeGuideModal__tips__item__text">
+                                    <p class="heading">HIPS</p>
+                                    <p>Measure your low hip around the fullest part of your hip.</p>
+                                  </div>
+                                </div>
+                                <div class="sizeGuideModal__tips__item">
+                                  <span class="sizeGuideModal__tips__item__num">5</span>
+                                  <div class="sizeGuideModal__tips__item__text">
+                                    <p class="heading">INSIDE LEG</p>
+                                    <p>inside leg is measured from the crotch to the floor.</p>
+                                  </div>
+                                </div>
+                              </div>
+                              {% assign imgUrl ='https://cdn.shopifycdn.net/s/files/1/0644/1041/9425/files/0d63567086017e209c787b26bf715488.png?v=1656319738'                              %}
+                              <div class="sizeGuideModal__tips__right">
+                                <img src="{{ imgUrl }}" alt="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    (() => {
+                      /*尺码表 start*/
+                      let sizeGuideModal = document.querySelector('#shopify-section-{{ section.id }} #sizeGuideModal')
+                      let sizeGuideModal__checkbox = sizeGuideModal.querySelector('.sizeGuideModal__checkbox')
+
+                      function initSizeGuideTable() {
+                        let tbody = sizeGuideModal.querySelector('tbody')
+                        let className = sizeGuideModal__checkbox.className
+                        let jsonText = sizeGuideModal.querySelector('[type="application/json"][data-type="chart"]')
+                        let jsonData = jsonText ? jsonText.textContent : '[]'
+                        let data = JSON.parse(jsonData)
+                        let tableHtml = ''
+                        for (const item in data) {
+                          tableHtml += `<tr>`
+                          if (item === 'SIZE') {
+                            tableHtml += `<th>${item}</th>`
+                            let arr = data[item].split('/')
+                            arr.map(i => {
+                              tableHtml += `<th>${i}</th>`
+                            })
+                          } else {
+                            if (className.indexOf('is-checked') > -1) {
+                              tableHtml += `<td>${item === 'US SIZE' ? 'CM SIZE' : item}</td>`
+                              let arr = data[item].split('/')
+                              arr.map(i => {
+                                let tdArr = i.split('-')
+                                tableHtml += `<td>${tdArr[0] * 2.54.toFixed(1) + '-' + tdArr[1] * 2.54.toFixed(1)}</td>`
+                              })
+                            } else {
+                              tableHtml += `<td>${item}</td>`
+                              let arr = data[item].split('/')
+                              arr.map(i => {
+                                tableHtml += `<td>${i}</td>`
+                              })
+                            }
+                          }
+                          tableHtml += `</tr>`
+                        }
+                        tbody.innerHTML = tableHtml
+                      }
+
+                      sizeGuideModal__checkbox.addEventListener('click', () => {
+                        let className = sizeGuideModal__checkbox.className
+                        if (className.indexOf('is-checked') > -1) {
+                          sizeGuideModal__checkbox.classList.remove('is-checked')
+                        } else {
+                          sizeGuideModal__checkbox.classList.add('is-checked')
+                        }
+                        initSizeGuideTable()
+                      })
+
+                      initSizeGuideTable()
+                      /*尺码表 end*/
+                    })();
+
+                  </script>
+                  <style>
+                    /*尺码表样式 start*/
+                    #sizeGuideModal .modal__inner .modal__inner__top {
+                      padding: 10px 30px;
+                      background-color: #000;
+                      text-align: center;
+                      color: #FFFFFF;
+                    }
+                    .size-chart__btn{
+                      background: none;
+                      font-size: 1.3rem;
+                      cursor: pointer;
+                      color: #fff;
+                      border: none;
+                      text-decoration:underline;
+                      text-underline-offset:0.5rem
+                    }
+                    .sizeGuideModal__tips__left {
+                      width: 50%;
+                      color: #000;
+                    }
+                
+                    #sizeGuideModal .modal__inner__top__title {
+                      font-size: 20px;
+                      color: #FFFFFF;
+                    }
+                
+                    #sizeGuideModal .modal__close {
+                      color: #FFFFFF;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__checkbox {
+                      display: flex;
+                      align-items: center;
+                      cursor: pointer;
+                      margin-bottom: 20px;
+                      font-weight: 500;
+                      justify-content: center;
+                    }
+                
+                    .heading {
+                      font-weight: 600;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__checkbox__core {
+                      position: relative;
+                      display: inline-block;
+                      width: 40px;
+                      height: 20px;
+                      background-color: #E0DCD6;
+                      border-radius: 10px;
+                      margin: 0 12px;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__checkbox__core:after {
+                      content: "";
+                      position: absolute;
+                      left: 0;
+                      width: 20px;
+                      height: 20px;
+                      background-color: #000;
+                      border-radius: 50%;
+                      transition: all ease-in-out 0.2s;
+                    }
+                
+                    #sizeGuideModal .is-checked .sizeGuideModal__checkbox__core:after {
+                      left: 100%;
+                      margin-left: -20px;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__checkbox span:nth-child(1) {
+                      color: #000
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__checkbox span:nth-child(3) {
+                      color: #000;
+                    }
+                
+                    #sizeGuideModal table {
+                      border-top: 1px solid #999;
+                      border-left: 1px solid #999;
+                      border-spacing: 0;
+                      display: block;
+                      max-width: fit-content;
+                      overflow-x: auto;
+                      white-space: nowrap;
+                      margin: auto;
+                      text-align: center;
+                      font-size: 15px;
+                    }
+                
+                    #sizeGuideModal table td,
+                    #sizeGuideModal table th {
+                      border: none;
+                      padding: 10px 20px;
+                      border-bottom: 1px solid #999;
+                      border-right: 1px solid #999;
+                      font-weight: 500;
+                    }
+
+                    #sizeGuideModal table td{
+                      background: #636363;
+                    }
+
+                    #sizeGuideModal table tr:first-child {
+                      background: #000;
+                    }
+
+                    #sizeGuideModal table td:first-child,
+                    #sizeGuideModal table tr:nth-child(2)>td,
+                    #sizeGuideModal table th:first-child {
+                      background: #000;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__tips {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-top: 20px;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__tips__right {
+                      width: 20%;
+                      min-width: 150px;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__tips__right img {
+                      width: 100%;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__tips__title {
+                      color: #000;
+                      font-weight: 600;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__tips__item__num {
+                      min-width: 20px;
+                      height: 20px;
+                      text-align: center;
+                      line-height: 20px;
+                      background: #000;
+                      color: #FFFFFF;
+                      border-radius: 50%;
+                      margin-right: 15px;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__tips__item {
+                      display: flex;
+                      align-items: center;
+                      margin-bottom: 30px;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__tips__item__text p {
+                      margin: 0;
+                    }
+                
+                    #sizeGuideModal .sizeGuideModal__tips__item__text {
+                      display: inline-block;
+                    }
+                
+                    @media screen and (max-width: 641px) {
+                      #sizeGuideModal .modal__close {
+                        position: absolute;
+                        right: 10px;
+                        top: 20px;
+                      }
+                
+                      #sizeGuideModal .card__section {
+                        padding: 15px;
+                      }
+                
+                      #sizeGuideModal table td,
+                      #sizeGuideModal table th {
+                        padding: 5px 10px;
+                      }
+                
+                      #sizeGuideModal .sizeGuideModal__tips__item {
+                        margin-bottom: 10px;
+                      }
+                      .sizeGuideModal__tips__left{
+                        width: auto;
+                      }
+                    }
+                
+                    /*尺码表样式 end*/
+                    .modal {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      position: fixed;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      margin: 0 auto;
+                      z-index: 999;
+                      visibility: hidden;
+                      pointer-events: none;
+                      opacity: 0;
+                      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+                    }
+                
+                    .modal::before {
+                      position: fixed;
+                      content: "";
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: rgba(0, 0, 0, 0.35);
+                      pointer-events: none;
+                    }
+                
+                    .modal[aria-hidden=false] {
+                      visibility: visible;
+                      opacity: 1;
+                      pointer-events: auto;
+                    }
+                
+                    .modal[aria-hidden=false] .modal__dialog {
+                      transform: scale(1);
+                      transition: transform 0.4s cubic-bezier(0.18, 1.25, 0.4, 1), visibility 0.4s linear;
+                    }
+                
+                    .modal__dialog {
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      max-height: 100vh;
+                      background-color: #fff;
+                      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+                      overflow: auto;
+                      -webkit-overflow-scrolling: touch;
+                      transform: scale(0.9);
+                      transition: transform 0.25s ease-in-out, visibility 0.25s ease-in-out;
+                    }
+                
+                    .modal__loader {
+                      display: none;
+                      padding: 60px 0;
+                      text-align: center;
+                    }
+                
+                    .modal__loader .icon--search-loader {
+                      width: 35px;
+                      height: 35px;
+                      color: var(--accent-color);
+                    }
+                
+                    .modal__header {
+                      position: -webkit-sticky;
+                      position: sticky;
+                      top: 0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      border-bottom: 1px solid var(--border-color);
+                      background: var(--secondary-background);
+                      z-index: 1;
+                    }
+                
+                    .modal__header,
+                    .modal__content {
+                      padding: 20px;
+                    }
+                
+                    .modal__header+.modal__content {
+                      padding-top: 30px;
+                    }
+                
+                    .modal__title {
+                      margin-bottom: 0;
+                      text-align: center;
+                    }
+                
+                    .modal__description {
+                      display: block;
+                      margin-bottom: 30px;
+                      text-align: center;
+                    }
+                
+                    .modal__close {
+                      color: var(--heading-color);
+                      z-index: 1;
+                    }
+                
+                    .modal__close svg {
+                      display: block;
+                      width: 20px;
+                      height: 20px;
+                    }
+                
+                    /* Ugly fix for border radius */
+                    .modal .card {
+                      background: none;
+                    }
+                
+                    /* Loading state */
+                    .modal.is-loading .modal__loader {
+                      display: block;
+                    }
+                
+                    .modal.is-loading .modal__inner {
+                      display: none;
+                    }
+                
+                    @media screen and (max-width: 640px) {
+                      .modal__content--ios-push {
+                        padding-bottom: 45px;
+                        /* This allows to take into account the toolbar height of iOS to avoid annoying double click */
+                      }
+                    }
+                
+                    @media screen and (min-width: 641px) {
+                      .modal__dialog {
+                        width: 580px;
+                        height: auto;
+                        max-height: calc(100% - 80px);
+                        border-radius: 3px;
+                      }
+                
+                      .modal__dialog--stretch {
+                        width: calc(100% - 80px);
+                        margin-left: auto;
+                        margin-right: auto;
+                        max-width: 1200px;
+                      }
+                
+                      .modal__header,
+                      .modal__content {
+                        padding: 30px;
+                      }
+                
+                      .modal__header:not(.modal__header--bordered) {
+                        position: relative;
+                        display: block;
+                        padding-bottom: 0;
+                        text-align: center;
+                        border-bottom: none;
+                      }
+                
+                      .modal__header--bordered {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                      }
+                
+                      .modal__close {
+                        position: absolute;
+                        right: 28px;
+                        top: 16px;
+                      }
+                
+                      .modal__description {
+                        margin-top: -18px;
+                      }
+                    }
+                  </style>
+                </open-model>
+                {%- comment -%} 尺码表弹窗 end {%- endcomment -%}
                 </variant-radios>
               {%- else -%}
                 <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>

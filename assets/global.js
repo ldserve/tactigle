@@ -899,3 +899,45 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
+
+
+/*size guid start */
+class OpenModel extends HTMLElement {
+  constructor() {
+    super();
+    this.model = this.querySelector('.modal')
+    this.close = this.querySelector('.modal__close')
+    this.init()
+  }
+  init() {
+    this.addEven()
+  }
+  addEven() {
+    this.close.addEventListener('click', this.hide.bind(this))
+    this.model.addEventListener('click', this.hide.bind(this))
+
+    document.querySelector(".modal__dialog").onclick = function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
+  }
+  show(opener) {
+    this.setAttribute('open', '')
+    this.model && this.model.setAttribute('aria-hidden', false)
+    document.body.classList.add('overflow-hidden')
+
+  }
+  hide(e) {
+    this.removeAttribute('open')
+    this.model.setAttribute('aria-hidden', true)
+    document.body.classList.remove('overflow-hidden')
+
+    e && e.preventDefault()
+  }
+
+}
+
+customElements.define('open-model', OpenModel);
+
+/*size guid  end */
