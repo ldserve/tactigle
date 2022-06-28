@@ -126,7 +126,7 @@
                       {% if featured_media.preview_image.width >= 162 %}{{ featured_media.preview_image | image_url: width: 162 }} 162w,{% endif %}
                       {% if featured_media.preview_image.width >= 208 %}{{ featured_media.preview_image | image_url: width: 208 }} 208w,{% endif %}
                       {% if featured_media.preview_image.width >= 324 %}{{ featured_media.preview_image | image_url: width: 324 }} 324w,{% endif %}
-                      {% if featured_media.preview_image.width >= 416 %}{{ featured_media.preview_image | image_url: width: 416 }} 416w,{% endif %},
+                      {% if featured_media.preview_image.width >= 416 %}{{ featured_media.preview_image | image_url: width: 416 }} 416w,{% endif %}
                       {{ featured_media.preview_image | image_url }} {{ media.preview_image.width }}w"
                       src="{{ featured_media | image_url: width: 416 }}"
                       sizes="(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width | minus: 100 | times: media_width | round }} - 4rem) / 4), (min-width: 990px) calc(({{ media_width | times: 100 }}vw - 4rem) / 4), (min-width: 750px) calc((100vw - 15rem) / 8), calc((100vw - 14rem) / 3)"
@@ -331,19 +331,18 @@
                   {%- for option in product.options_with_values -%}
                   {%- assign option_type =option.name | downcase -%}
                       <fieldset class="js product-form__input">
-                        <legend class="form__label {% if  option_type =="size" %}size__title{% endif %}">
-                          {{ option.name }}
+                        <div class=" {% if option_type =="size" %}size__title{% endif %}">
+                          <legend class="form__label">
+                            {{ option.name }}
+                          </legend>
                           {% if option_type =="size" %}
                           <modal-opener data-modal="#SizeGuid-{{ product.id }}">
-                            <button
-                            type="button"
-                              class="size-chart__btn button--full-width button--secondary"
-                            >
+                            <button type="button" class="size-chart__btn button--full-width button--secondary">
                               Size Chart
                             </button>
                           </modal-opener>
                           {% endif %}
-                        </legend>
+                        </div>
                         {%- for value in option.values -%}
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                 name="{{ option.name }}"
@@ -524,29 +523,37 @@
                       text-align: center;
                       color: #FFFFFF;
                     }
-                    .size-chart__btn{
+                  
+                    .size__title {
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: 1rem;
+                    }
+                  
+                    .size-chart__btn {
                       background: none;
                       font-size: 1.3rem;
                       cursor: pointer;
-                      color: #fff;
+                      color: #FFFFFFBF;
                       border: none;
-                      text-decoration:underline;
-                      text-underline-offset:0.5rem
+                      text-decoration: underline;
+                      text-underline-offset: 0.5rem
                     }
+                  
                     .sizeGuideModal__tips__left {
                       width: 50%;
                       color: #000;
                     }
-                
+                  
                     #sizeGuideModal .modal__inner__top__title {
                       font-size: 20px;
                       color: #FFFFFF;
                     }
-                
+                  
                     #sizeGuideModal .modal__close {
                       color: #FFFFFF;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__checkbox {
                       display: flex;
                       align-items: center;
@@ -555,11 +562,11 @@
                       font-weight: 500;
                       justify-content: center;
                     }
-                
+                  
                     .heading {
                       font-weight: 600;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__checkbox__core {
                       position: relative;
                       display: inline-block;
@@ -569,7 +576,7 @@
                       border-radius: 10px;
                       margin: 0 12px;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__checkbox__core:after {
                       content: "";
                       position: absolute;
@@ -580,20 +587,20 @@
                       border-radius: 50%;
                       transition: all ease-in-out 0.2s;
                     }
-                
+                  
                     #sizeGuideModal .is-checked .sizeGuideModal__checkbox__core:after {
                       left: 100%;
                       margin-left: -20px;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__checkbox span:nth-child(1) {
                       color: #000
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__checkbox span:nth-child(3) {
                       color: #000;
                     }
-                
+                  
                     #sizeGuideModal table {
                       border-top: 1px solid #999;
                       border-left: 1px solid #999;
@@ -606,7 +613,7 @@
                       text-align: center;
                       font-size: 15px;
                     }
-                
+                  
                     #sizeGuideModal table td,
                     #sizeGuideModal table th {
                       border: none;
@@ -614,43 +621,44 @@
                       border-bottom: 1px solid #999;
                       border-right: 1px solid #999;
                       font-weight: 500;
+                      color: #fff
                     }
-
-                    #sizeGuideModal table td{
+                  
+                    #sizeGuideModal table td {
                       background: #636363;
                     }
-
+                  
                     #sizeGuideModal table tr:first-child {
                       background: #000;
                     }
-
+                  
                     #sizeGuideModal table td:first-child,
                     #sizeGuideModal table tr:nth-child(2)>td,
                     #sizeGuideModal table th:first-child {
                       background: #000;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__tips {
                       display: flex;
                       justify-content: center;
                       align-items: center;
                       margin-top: 20px;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__tips__right {
                       width: 20%;
                       min-width: 150px;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__tips__right img {
                       width: 100%;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__tips__title {
                       color: #000;
                       font-weight: 600;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__tips__item__num {
                       min-width: 20px;
                       height: 20px;
@@ -661,45 +669,46 @@
                       border-radius: 50%;
                       margin-right: 15px;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__tips__item {
                       display: flex;
                       align-items: center;
                       margin-bottom: 30px;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__tips__item__text p {
                       margin: 0;
                     }
-                
+                  
                     #sizeGuideModal .sizeGuideModal__tips__item__text {
                       display: inline-block;
                     }
-                
+                  
                     @media screen and (max-width: 641px) {
                       #sizeGuideModal .modal__close {
                         position: absolute;
                         right: 10px;
                         top: 20px;
                       }
-                
+                  
                       #sizeGuideModal .card__section {
                         padding: 15px;
                       }
-                
+                  
                       #sizeGuideModal table td,
                       #sizeGuideModal table th {
                         padding: 5px 10px;
                       }
-                
+                  
                       #sizeGuideModal .sizeGuideModal__tips__item {
                         margin-bottom: 10px;
                       }
-                      .sizeGuideModal__tips__left{
+                  
+                      .sizeGuideModal__tips__left {
                         width: auto;
                       }
                     }
-                
+                  
                     /*尺码表样式 end*/
                     .modal {
                       display: flex;
@@ -717,7 +726,7 @@
                       opacity: 0;
                       transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
                     }
-                
+                  
                     .modal::before {
                       position: fixed;
                       content: "";
@@ -728,18 +737,18 @@
                       background: rgba(0, 0, 0, 0.35);
                       pointer-events: none;
                     }
-                
+                  
                     .modal[aria-hidden=false] {
                       visibility: visible;
                       opacity: 1;
                       pointer-events: auto;
                     }
-                
+                  
                     .modal[aria-hidden=false] .modal__dialog {
                       transform: scale(1);
                       transition: transform 0.4s cubic-bezier(0.18, 1.25, 0.4, 1), visibility 0.4s linear;
                     }
-                
+                  
                     .modal__dialog {
                       position: absolute;
                       width: 100%;
@@ -752,19 +761,19 @@
                       transform: scale(0.9);
                       transition: transform 0.25s ease-in-out, visibility 0.25s ease-in-out;
                     }
-                
+                  
                     .modal__loader {
                       display: none;
                       padding: 60px 0;
                       text-align: center;
                     }
-                
+                  
                     .modal__loader .icon--search-loader {
                       width: 35px;
                       height: 35px;
                       color: var(--accent-color);
                     }
-                
+                  
                     .modal__header {
                       position: -webkit-sticky;
                       position: sticky;
@@ -776,59 +785,59 @@
                       background: var(--secondary-background);
                       z-index: 1;
                     }
-                
+                  
                     .modal__header,
                     .modal__content {
                       padding: 20px;
                     }
-                
+                  
                     .modal__header+.modal__content {
                       padding-top: 30px;
                     }
-                
+                  
                     .modal__title {
                       margin-bottom: 0;
                       text-align: center;
                     }
-                
+                  
                     .modal__description {
                       display: block;
                       margin-bottom: 30px;
                       text-align: center;
                     }
-                
+                  
                     .modal__close {
                       color: var(--heading-color);
                       z-index: 1;
                     }
-                
+                  
                     .modal__close svg {
                       display: block;
                       width: 20px;
                       height: 20px;
                     }
-                
+                  
                     /* Ugly fix for border radius */
                     .modal .card {
                       background: none;
                     }
-                
+                  
                     /* Loading state */
                     .modal.is-loading .modal__loader {
                       display: block;
                     }
-                
+                  
                     .modal.is-loading .modal__inner {
                       display: none;
                     }
-                
+                  
                     @media screen and (max-width: 640px) {
                       .modal__content--ios-push {
                         padding-bottom: 45px;
                         /* This allows to take into account the toolbar height of iOS to avoid annoying double click */
                       }
                     }
-                
+                  
                     @media screen and (min-width: 641px) {
                       .modal__dialog {
                         width: 580px;
@@ -836,19 +845,19 @@
                         max-height: calc(100% - 80px);
                         border-radius: 3px;
                       }
-                
+                  
                       .modal__dialog--stretch {
                         width: calc(100% - 80px);
                         margin-left: auto;
                         margin-right: auto;
                         max-width: 1200px;
                       }
-                
+                  
                       .modal__header,
                       .modal__content {
                         padding: 30px;
                       }
-                
+                  
                       .modal__header:not(.modal__header--bordered) {
                         position: relative;
                         display: block;
@@ -856,18 +865,18 @@
                         text-align: center;
                         border-bottom: none;
                       }
-                
+                  
                       .modal__header--bordered {
                         padding-top: 20px;
                         padding-bottom: 20px;
                       }
-                
+                  
                       .modal__close {
                         position: absolute;
                         right: 28px;
                         top: 16px;
                       }
-                
+                  
                       .modal__description {
                         margin-top: -18px;
                       }

@@ -2886,13 +2886,3 @@ details-disclosure > details {
    color: #b7b7b7; 
 } 
 
-
-/* Size Guid start*/
-.size__title{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-/* Size Guid end */
