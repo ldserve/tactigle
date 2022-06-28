@@ -907,12 +907,7 @@ class OpenModel extends HTMLElement {
     super();
     this.model = this.querySelector('.modal')
     this.close = this.querySelector('.modal__close')
-    this.init()
-  }
-  init() {
-    this.addEven()
-  }
-  addEven() {
+
     this.close.addEventListener('click', this.hide.bind(this))
     this.model.addEventListener('click', this.hide.bind(this))
 

@@ -332,16 +332,28 @@
                   {%- assign option_type =option.name | downcase -%}
                       <fieldset class="js product-form__input">
                         <div class=" {% if option_type =="size" %}size__title{% endif %}">
-                          <legend class="form__label">
-                            {{ option.name }}
-                          </legend>
-                          {% if option_type =="size" %}
+                          <legend class="form__label">{{ option.name }}</legend>
+
+                          {% assign showSizeGuideModal = true %}
+                          {% assign listStr = "Bag,Bracelet,Cap,FLAG,Hat,Jewelry Gift Box,Men's Belt,Men's Coat,Men's Hat,Men's Scarf,Necklace,Pendant,Phone Case,Ring,StickerSocks,Women's Bracelet"  %}
+                          {% assign noShowArr = listStr | split: ','  %}
+
+                          {% for arrItem in noShowArr %}
+                            {% assign typeDowncase = product.type | downcase %}
+                            {% assign arrItemDowncase = arrItem | downcase %}
+                            {% if typeDowncase == arrItemDowncase %}
+                              {% assign showSizeGuideModal = false %}
+                              {% break %}
+                            {% endif %}
+                          {% endfor %}
+                          {% if option_type =="size" and showSizeGuideModal%}
                           <modal-opener data-modal="#SizeGuid-{{ product.id }}">
-                            <button type="button" class="size-chart__btn button--full-width button--secondary">
+                            <button type="button" class="size-chart__btn button--full-width button--secondary" data-type="{{product.type}}">
                               Size Chart
                             </button>
                           </modal-opener>
                           {% endif %}
+                          
                         </div>
                         {%- for value in option.values -%}
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -458,6 +470,7 @@
                       </div>
                     </div>
                   </div>
+                </open-model>
                   <script>
                     (() => {
                       /*尺码表 start*/
@@ -882,7 +895,6 @@
                       }
                     }
                   </style>
-                </open-model>
                 {%- comment -%} 尺码表弹窗 end {%- endcomment -%}
                 </variant-radios>
               {%- else -%}
